@@ -1,14 +1,14 @@
 # Collaboration Tools
 
+This repository is designed to hold scripts used by SRI's ITS Collaboration group for different activities.  May this be automation, administration, or maintenance type of activities.  
+
+Be aware that this respository can have a combination of different language types (PowerShell, JavaScript, PHP, Python, etc...)
+
+
 ## Important Security Considerations
 
 Please avoid storing passwords or private keys in this repository.  Please utilize the .env file to store such information.   Gitignore will ignore .env files.   It is recommended to set an .env-example file with dummy data in its place.
 
-## What is this?
-
-This repository is designed to hold scripts used by SRI's ITS Collaboration group for different activities.  May this be automation, administration, or maintenance type of activities.  
-
-Be aware that this respository can have a combination of different language types (PowerShell, JavaScript, PHP, Python, etc...)
 
 ## How to use:
 
