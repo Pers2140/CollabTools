@@ -1,6 +1,8 @@
 # Collaboration Tools
 
+## Important Security Considerations
 
+Please avoid storing passwords or private keys in this repository.  Please utilize the .env file to store such information.   Gitignore will ignore .env files.   It is recommended to set an .env-example file with dummy data in its place.
 
 ## What is this?
 
