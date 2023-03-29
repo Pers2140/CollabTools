@@ -4,10 +4,11 @@ Import-Module ./Get-ADPhotos, ./Get-MSGraph, ./Update-StaffInfo
 # import-Module ActiveDirectoryTools 
 # Import-Module -Name ActiveDirectory
 
-$env:client_id = '89723cfa-0e2a-4663-b0cd-65b6cb94d5d1'
-$env:client_secret = '-Y58Q~2IH5rIcshgQQQ7w1q1ozjFi94w~-CTrb1n'
-$env:tenant_id = '8c0ee380-52d5-49f7-a4a2-34cf2be7b0b9'
-$env:site_id = '7733831a-48a3-4298-a44b-b87ca6c3b531'
+# define env variables
+$env:client_id = ''
+$env:client_secret = ''
+$env:tenant_id = ''
+$env:site_id = ''
 
 Get-DriveIds
 $env:drive_id = Read-Host -Prompt "`n`n What is your drive id? `n"
@@ -46,7 +47,7 @@ switch($Answer) {
         write-host "`n`n"
        }
     5  {
-        write-host "`n`n Uploading folder`n`n "
+        write-host "`n`n Uploading file`n`n "
         $(Get-UserToken).access_token
         write-host "`n`n"
         }
