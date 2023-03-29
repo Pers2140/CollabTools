@@ -8,7 +8,7 @@ def get_sharepoint_context_using_user():
     sharepoint_url = 'https://sriitdev2.sharepoint.com/sites/AD_profileinfo'
 
     # Initialize the client credentials
-    user_credentials = UserCredential("darius.persaud@sriitdev2.onmicrosoft.com", "!$_Pdntspa3")
+    user_credentials = UserCredential("useremail", "userpassword")
 
     # create client context object
     ctx = ClientContext(sharepoint_url).with_credentials(user_credentials)

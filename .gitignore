@@ -2,3 +2,4 @@
 *.cer
 *.pfx
 *.vscode
+__pycache__
