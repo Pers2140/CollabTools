@@ -1,5 +1,5 @@
 
-# Best Practices for Writing PowerShell Functions
+# Best Practices when Writing PowerShell Functions
 
 1. Use descriptive and meaningful function names.
 2. Include comment-based help.
