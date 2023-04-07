@@ -1,7 +1,7 @@
 
 # Best Practices for Writing PowerShell Functions
 
-1. Use descriptive and meaningful function names. <--- Use Get-Verb for approved commands --->
+1. Use descriptive and meaningful function names. <--- Use Get-Verb for approved commands
 2. Include comment-based help.
 3. Use parameters.
 4. Keep functions focused and modular.
