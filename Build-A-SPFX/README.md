@@ -21,11 +21,11 @@ folder to your container and expose the necessary ports for SPFX workbench.
 </br>
 
     <!-- persistent container -->
-    docker run -it --name spfx-helloworld -v ${PWD}:/usr/app/spfx -p 4321:4321 -p 35729:35729 m365pnp/spfx
+    docker run -it --name spfx-helloworld -v ${PWD}:/usr/app/spfx -p 4321:4321 -p 35729:35729 m365pnp/spfx:1.16.0
 </br>
 
      <!-- temporary container - will self destruct when closed -->
-    docker run --rm -it --name spfx-helloworld -v ${PWD}:/usr/app/spfx -p 4321:4321 -p 35729:35729 m365pnp/spfx
+    docker run --rm -it --name spfx-helloworld -v ${PWD}:/usr/app/spfx -p 4321:4321 -p 35729:35729 m365pnp/spfx:1.16.0
 
 ## Replacing troublesome files
 
@@ -53,4 +53,63 @@ run <span style="background-color:#012456;color:white">./files_to_replace/replac
 
 ## Warning error -<span style="background-color:white;color:black">Your web part will not appear in the toolbox. Please make sure "gulp serve" is running in a web part project. Please refresh the page once "gulp serve" is running. </span>
 
-<p>Temporary solution:  Visit <a href ="https://localhost:4321/temp/manifests.js">https://localhost:4321/temp/manifests.js</a> in a separate tab <p>
+<p>Temporary solution:  Visit <a href ="https://localhost:4321/temp/manifests.js">https://localhost:4321/temp/manifests.js</a> in a separate tab <>
+
+## Deploying your app
+
+<p>If gulp serve is still running, stop it from running by selecting CTRL+C.</p>
+<p>Open package-solution.json from the config folder.
+
+The package-solution.json file defines the package metadata as shown in the following code:</p>
+
+        {
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "mysolution-client-side-solution",
+        "id": "ee1a495d-c7bb-499b-bd71-728aaeb79cd2",
+        "version": "1.0.0.0",
+        "includeClientSideAssets": true,
+        "skipFeatureDeployment": true,
+        "isDomainIsolated": false,
+        "developer": {
+        "name": "",
+        "websiteUrl": "",
+        "privacyUrl": "",
+        "termsOfUseUrl": "",
+        "mpnId": "Undefined-1.14.0"
+        },
+        "metadata": {
+        "shortDescription": {
+            "default": "mysolution description"
+        },
+        "longDescription": {
+            "default": "mysolution description"
+        },
+        "screenshotPaths": [],
+        "videoUrl": "",
+        "categories": []
+        },
+        "features": [
+        {
+            "title": "mysolution Feature",
+            "description": "The feature that activates elements of the mysolution solution.",
+            "id": "d72e47b2-d5a2-479f-9f9a-85e1e7472dee",
+            "version": "1.0.0.0"
+        }
+        ]
+    },
+    "paths": {
+        "zippedPackage": "solution/mysolution.sppkg"
+    }
+    }
+
+</br>
+<p>In the console window, enter the following command to bundle your client-side solution:</p>
+
+    gulp bundle
+
+<p>In the console window, enter the following command to package your client-side solution that contains the web part:</p>
+
+    gulp package-solution
+
+## The command creates the following package: ./sharepoint/solution/helloworld-webpart.sppkg.
