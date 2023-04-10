@@ -5,7 +5,6 @@
 
 - [Installing WSL2 and Docker](docs/InstallingWSL2%26Docker.md)
 - [Replacing troublesome files/troubleshooting](docs/ReplacingFiles.md)
-- SPFX fast-serve-tool ... coming soon
 
 ## 
 <span style="background-color: #000;color:red">before starting please run the InstallWSL2&Docker PowerShell script to install the prerequisites. If this fails to run please follow the steps in [Installing WSL2 and Docker](docs/InstallingWSL2%26Docker.md)</span>
@@ -54,6 +53,25 @@ run <span style="background-color:#012456;color:white">./files_to_replace/replac
 ## Warning error -<span style="background-color:white;color:black">Your web part will not appear in the toolbox. Please make sure "gulp serve" is running in a web part project. Please refresh the page once "gulp serve" is running. </span>
 
 <p>Temporary solution:  Visit <a href ="https://localhost:4321/temp/manifests.js">https://localhost:4321/temp/manifests.js</a> in a separate tab <>
+
+## SPFx Fast Serve Tool
+<p>A command line utility, which modifies your SharePoint Framework solution, so that it runs continuous serve command as fast as possible. <span style="background-color: #000;color:yellow">Also supports live reload! </span><p>
+How to use
+
+1. Install `spfx-fast-serve` globally using npm:
+    ```
+    npm install spfx-fast-serve -g
+    ```
+
+2. Open a command line in a folder with your SharePoint Framework solution you want to speed up.
+
+3. Run `spfx-fast-serve` and follow instructions. In most cases, you shouldn't do anything specific and the CLI "just works".
+
+4. Run `npm install`.
+
+5. Run `npm run serve` and enjoy the incredible speed of the `serve` command!
+
+
 
 ## Deploying your app
 
